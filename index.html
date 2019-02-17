@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="./img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./img/favicon/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
@@ -25,99 +25,31 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <div id="mac-popup">
-    <header>
-      <div class="close-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="folder-name">
-        <img src="./img/menu-icon/folder.png" alt="folder">
-        <p>project</p>
-      </div>
-    </header>
-    <nav>
-      <ul>
-        <li>
-          <a href="">
-            <img src="./img/menu-icon/folder.png" alt="folder">
-            <p>project</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./img/menu-icon/folder.png" alt="folder">
-            <p>about</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./img/menu-icon/folder.png" alt="folder">
-            <p>activity</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./img/menu-icon/folder.png" alt="folder">
-            <p>certificate</p>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <section>
-      <ul>
-        <li>
-          <a href="">
-            <img src="./img/menu-icon/folder.png" alt="folder">
-            <p>nodejs</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./img/menu-icon/folder.png" alt="folder">
-            <p>php</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./img/menu-icon/folder.png" alt="folder">
-            <p>python</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <img src="./img/menu-icon/folder.png" alt="folder">
-            <p>javascript</p>
-          </a>
-        </li>
-      </ul>
-    </section>
-  </div>
+  <iframe src="./project.html" id="frame" frameborder="0"></iframe>
   <div id="wrap">
     <div class="background">
       <nav>
         <ul>
           <li>
-            <a href="#">
-              <img src="./img/menu-icon/folder.png" alt="menu-icon" class="big-img">
-              <p>project</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
+            <a href="#" class="folder" data-iframe="about">
               <img src="./img/menu-icon/folder.png" alt="menu-icon" class="big-img">
               <p>about</p>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" class="folder" data-iframe="project">
+              <img src="./img/menu-icon/folder.png" alt="menu-icon" class="big-img">
+              <p>project</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="folder" data-iframe="activity">
               <img src="./img/menu-icon/folder.png" alt="menu-icon" class="big-img">
               <p>activity</p>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" class="folder" data-iframe="certificate">
               <img src="./img/menu-icon/folder.png" alt="menu-icon" class="big-img">
               <p>certificate</p>
             </a>
@@ -150,5 +82,26 @@
       </nav>
     </div>
   </div>
+  <script>
+    var folder = document.getElementsByClassName('folder');
+    var iframe = document.getElementById('iframe');
+    
+    for (let i = 0; i < folder.length; i++) {
+      folder[i].addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        var src = this.dataset.iframe;
+        
+        iframe.style.display = 'block';
+        iframe.setAttribute('src', './' + src + '.html');
+       
+        // var closed = iframe.contentWindow.document;
+        // console.log(closed);
+        // closed.addEventListener('click', function() {
+        //   iframe.style.display = 'none';
+        // });
+      }, false);
+    }
+  </script>
 </body>
 </html>
