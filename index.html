@@ -82,20 +82,32 @@
       </nav>
     </div>
   </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
   <script>
-    var folder = document.getElementsByClassName('folder');
-    var iframe = document.getElementById('iframe');
+    document.addEventListener("DOMContentLoaded", function(){
+      var folder = document.getElementsByClassName('folder');
+      var iframe = document.getElementById('iframe');
 
-    for (let i = 0; i < folder.length; i++) {
-      folder[i].addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        var src = this.dataset.iframe;
-        
-        iframe.style.display = 'block';
-        iframe.setAttribute('src', './' + src + '.html');
-      }, false);
-    }
+      for (let i = 0; i < folder.length; i++) {
+        folder[i].addEventListener('click', function(event) {
+          event.preventDefault();
+          
+          iframe.setAttribute('src', './' + this.dataset.iframe + '.html');
+          iframe.style.display = 'block';
+
+          iframe.addEventListener('load', function() {
+            var iframeContents = $('#iframe').contents();
+
+            iframeContents.find("#closed").click(function(){
+              iframe.style.display = 'none';
+            });
+          });
+        }, false);
+      }
+    });
   </script>
 </body>
 </html>
