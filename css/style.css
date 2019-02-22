@@ -65,7 +65,7 @@
   line-height: 2rem;
 }
 iframe {
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
@@ -87,13 +87,13 @@ iframe {
   background-color: #f2f2f2;
   border-radius: 10px 10px 0 0;
 }
-#mac-popup header div.close-btn {
+#mac-popup header div.mac-btn {
   float: left;
   width: 4rem;
   height: 1.75rem;
   padding: 0.55rem 0.425rem;
 }
-#mac-popup header div.close-btn div {
+#mac-popup header div.mac-btn div {
   float: left;
   display: block;
   width: 0.65rem;
@@ -106,21 +106,20 @@ iframe {
   line-height: 0.7rem;
   cursor: pointer;
 }
-#mac-popup header div.close-btn div:nth-child(1) {
+#mac-popup header div.mac-btn div:nth-child(1) {
   background-color: #f95f5b;
 }
-#mac-popup header div.close-btn div:nth-child(2) {
+#mac-popup header div.mac-btn div:nth-child(2) {
   background-color: #fcbc2a;
 }
-#mac-popup header div.close-btn div:nth-child(3) {
+#mac-popup header div.mac-btn div:nth-child(3) {
   line-height: 0.55rem;  
   background-color: #27cc40;
 }
-#mac-popup header div.close-btn div span {
+#mac-popup header div.mac-btn div span {
   opacity: 0;
-  transition: all 0.3s;
 }
-#mac-popup header div.close-btn div:hover span {
+#mac-popup header div.mac-btn div:hover span {
   opacity: 1;
 }
 #mac-popup header div.folder-name {

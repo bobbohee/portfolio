@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <iframe src="./project.html" id="frame" frameborder="0"></iframe>
+  <iframe src="" id="iframe" frameborder="0"></iframe>
   <div id="wrap">
     <div class="background">
       <nav>
@@ -68,13 +68,13 @@
           </li>
           <li>
             <a href="https://www.linkedin.com/in/park-bohee0705">
-              <img src="./img/menu-icon/linkedin-logo.png" alt="menu-icon" class="small-img">
+              <img src="./img/menu-icon/linkedin.png" alt="menu-icon" class="small-img">
               <p>linkedin</p>
             </a>
           </li>
           <li>
             <a href="https://github.com/park-bohee">
-              <img src="./img/menu-icon/github-logo.png" alt="menu-icon" class="small-img">
+              <img src="./img/menu-icon/github.png" alt="menu-icon" class="small-img">
               <p>github</p>
             </a>
           </li>
@@ -85,7 +85,7 @@
   <script>
     var folder = document.getElementsByClassName('folder');
     var iframe = document.getElementById('iframe');
-    
+
     for (let i = 0; i < folder.length; i++) {
       folder[i].addEventListener('click', function(event) {
         event.preventDefault();
@@ -94,12 +94,6 @@
         
         iframe.style.display = 'block';
         iframe.setAttribute('src', './' + src + '.html');
-       
-        // var closed = iframe.contentWindow.document;
-        // console.log(closed);
-        // closed.addEventListener('click', function() {
-        //   iframe.style.display = 'none';
-        // });
       }, false);
     }
   </script>
