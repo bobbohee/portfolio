@@ -49,17 +49,22 @@
   background-color:rgba(0, 0, 0, 0.25);
 }
 #wrap nav ul li a img.big-img {
+  float: left;
   width: 4rem;
   height: 4rem;
   margin: 0 1rem;
 }
 #wrap nav ul li a img.small-img {
+  float: left;
   width: 3.5rem;
   height: 3.5rem;
   margin: 0.25rem 1.25rem;
 }
 #wrap nav ul li a p {
+  float: left;
+  width: 100%;
   color: #fff;
+  font-size: 0.875rem;
   text-align: center;
   text-shadow: 1px 1px 2px #404040;
   line-height: 2rem;
@@ -75,25 +80,25 @@ iframe {
 }
 
 /* popup */
-#mac-popup {
+.mac-popup {
   width: 40rem;
   height: 24rem;
   border-radius: 10px;
   background-color: #fff;
 }
-#mac-popup header {
+.mac-popup header {
   width: 100%;
   height: 1.75rem;
   background-color: #f2f2f2;
   border-radius: 10px 10px 0 0;
 }
-#mac-popup header div.mac-btn {
+.mac-popup header div.mac-btn {
   float: left;
   width: 4rem;
   height: 1.75rem;
   padding: 0.55rem 0.425rem;
 }
-#mac-popup header div.mac-btn div {
+.mac-popup header div.mac-btn div {
   float: left;
   display: block;
   width: 0.65rem;
@@ -106,55 +111,55 @@ iframe {
   line-height: 0.7rem;
   cursor: pointer;
 }
-#mac-popup header div.mac-btn div:nth-child(1) {
+.mac-popup header div.mac-btn div:nth-child(1) {
   background-color: #f95f5b;
 }
-#mac-popup header div.mac-btn div:nth-child(2) {
+.mac-popup header div.mac-btn div:nth-child(2) {
   background-color: #fcbc2a;
 }
-#mac-popup header div.mac-btn div:nth-child(3) {
+.mac-popup header div.mac-btn div:nth-child(3) {
   line-height: 0.55rem;  
   background-color: #27cc40;
 }
-#mac-popup header div.mac-btn div span {
+.mac-popup header div.mac-btn div span {
   opacity: 0;
 }
-#mac-popup header div.mac-btn div:hover span {
+.mac-popup header div.mac-btn div:hover span {
   opacity: 1;
 }
-#mac-popup header div.folder-name {
+.mac-popup header div.folder-name {
   width: 4rem;
   height: 1.75rem;
   margin: 0 auto;
   padding: 0.375rem 0;
 }
-#mac-popup header div.folder-name img {
+.mac-popup header div.folder-name img {
   float: left;
   width: 1rem;
   height: 1rem;
   margin: 0 0.3rem 0 0;
 }
-#mac-popup header div.folder-name p {
+.mac-popup header div.folder-name p {
   float: left;
   font-size: 0.75rem;
 }
-#mac-popup nav {
+.mac-popup > nav {
   float: left;
   width: 10rem;
   height: 22.25rem;
   border-radius: 0 0 0 10px;
   background-color: #e6e6e6;
 }
-#mac-popup nav ul {
+.mac-popup > nav ul {
   width: 100%;
   height: 7rem;
 }
-#mac-popup nav ul li {
+.mac-popup > nav ul li {
   width: 100%;
   height: 1.75rem;
   list-style: none;
 }
-#mac-popup nav ul li a {
+.mac-popup > nav ul li a {
   display: inline-block;
   width: 100%;
   height: 1.75rem;
@@ -162,47 +167,143 @@ iframe {
   color: #000;
   text-decoration: none;
 }
-#mac-popup nav ul li a img {
+.mac-popup > nav ul li a img {
   float: left;
   width: 1.2rem;
   height: 1.2rem;
   margin: 0 0.55rem 0 0;
 }
-#mac-popup nav ul li a p {
+.mac-popup > nav ul li a p {
   float: left;
   font-size: 0.75rem;
   line-height: 1.2rem;
 }
-#mac-popup section {
+.mac-popup section {
   float: left;
   width: 30rem;
   height: 22.25rem;
   border-radius: 0 0 10px 0;
 }
-#mac-popup section ul {
+
+/* about */
+#about section .profile {
+  width: 100%;
+  height: 11.25rem;
+  padding: 0.9375rem;
+}
+#about section .profile h2 {
+  font-size: 1.125rem;
+  margin: 0 0 0.625rem 0.3125rem;
+}
+#about section .profile .profile-img {
+  float: left;
+  width: 7.5rem;
+  height: 7.5rem;
+  overflow: hidden;
+  border-radius: 0.3125rem;
+}
+#about section .profile .profile-img img {
   width: 100%;
   height: 100%;
 }
-#mac-popup section ul li {
+#about section .profile nav {
   float: left;
-  width: 6rem;
-  height: 5.5625rem;
+  width: 20.625rem;
+  height: 7.5rem;
+}
+#about section .profile nav ul {
+  width: 100%;
+  height: 100%;
+}
+#about section .profile nav ul li {
+  width: 100%;
+  height: 2.5rem;
   list-style: none;
 }
-#mac-popup section ul li a {
+#about section .profile nav ul li img {
+  float: left;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.625rem;
+}
+#about section .profile nav ul li img.small-img {
+  float: left;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0.6875rem;
+}
+#about section .profile nav ul li p, a {
+  float: left;
+  font-size: 0.8125rem;
+  line-height: 2.5rem;
+}
+#about section .education {
+  width: 100%;
+  height: 6.25rem;
+  padding: 0.9375rem;
+}
+#about section .education h2 {
+  font-size: 1.125rem;
+  margin: 0 0 0.625rem 0.3125rem;
+}
+#about section .education nav {
+  width: 100%;
+  height: 2.5rem;
+}
+#about section .education nav ul {
+  width: 100%;
+  height: 100%;
+}
+#about section .education nav ul li {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+#about section .education nav ul li img {
+  float: left;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  margin: 0.15625rem 0.625rem 0.15625rem 0.3125rem;
+}
+#about section .education nav ul li h3 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+#about section .education nav ul li p {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+/* project */
+#project section ul {
+  width: 100%;
+  height: 100%;
+  padding: 0.625rem 0;
+}
+#project section ul li {
+  float: left;
+  width: 6rem;
+  height: 5.25rem;
+  list-style: none;
+}
+#project section ul li a {
   display: inline-block;
   width: 100%;
   height: 100%;
-  padding: 0.4rem;
   color: #000;
   font-size: 0.875rem;
   text-decoration: none;
 }
-#mac-popup section ul li a img {
-  width: 3.2rem;
-  height: 3.2rem;
-  margin: 0 1rem;
+#project section ul li a img {
+  float: left;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 1.5rem;
 }
-#mac-popup section ul li a p {
+#project section ul li a p {
+  float: left;
+  width: 100%;
+  height: 2.25rem;
+  line-height: 2.25rem;
   text-align: center;
 }

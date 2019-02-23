@@ -98,9 +98,12 @@
             let iframeDocument = iframe.contentWindow.document;
             let closed = iframeDocument.getElementById('closed');
 
-            closed.addEventListener('click', function () {
-              iframe.style.display = 'none';
-            });
+            if (closed) {
+              closed.addEventListener('click', function () {
+                iframe.setAttribute('src', '');
+                iframe.style.display = 'none';
+              });
+            }
           });
         }, false);
       }
