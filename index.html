@@ -97,12 +97,23 @@
           iframe.addEventListener('load', function () {
             let iframeDocument = iframe.contentWindow.document;
             let closed = iframeDocument.getElementById('closed');
+            let insideFolder = iframeDocument.getElementsByClassName('insideFolder');
 
             if (closed) {
               closed.addEventListener('click', function () {
                 iframe.setAttribute('src', '');
                 iframe.style.display = 'none';
               });
+            }
+
+            if (insideFolder) {
+              for (let j = 0; j < insideFolder.length; j++) {
+                insideFolder[j].addEventListener('click', function (event) {
+                  event.preventDefault();
+
+                  iframe.setAttribute('src', './' + this.dataset.iframe + '.html');
+                }, false);
+              }
             }
           });
         }, false);
