@@ -64,7 +64,7 @@
   float: left;
   width: 100%;
   color: #fff;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   text-align: center;
   text-shadow: 1px 1px 2px #404040;
   line-height: 2rem;
@@ -128,7 +128,7 @@ iframe {
   opacity: 1;
 }
 .mac-popup header div.folder-name {
-  width: 4rem;
+  width: 5rem;
   height: 1.75rem;
   margin: 0 auto;
   padding: 0.375rem 0;
@@ -142,6 +142,7 @@ iframe {
 .mac-popup header div.folder-name p {
   float: left;
   font-size: 0.75rem;
+  margin: 0.0625rem 0 0 0;
 }
 .mac-popup > nav {
   float: left;
@@ -206,33 +207,29 @@ iframe {
   width: 100%;
   height: 100%;
 }
-#about section .profile nav {
+#about section .profile ul {
   float: left;
   width: 20.625rem;
   height: 7.5rem;
 }
-#about section .profile nav ul {
-  width: 100%;
-  height: 100%;
-}
-#about section .profile nav ul li {
+#about section .profile ul li {
   width: 100%;
   height: 2.5rem;
   list-style: none;
 }
-#about section .profile nav ul li img {
+#about section .profile ul li img {
   float: left;
   width: 1.25rem;
   height: 1.25rem;
   margin: 0.625rem;
 }
-#about section .profile nav ul li img.small-img {
+#about section .profile ul li img.small-img {
   float: left;
   width: 1.125rem;
   height: 1.125rem;
   margin: 0.6875rem;
 }
-#about section .profile nav ul li p, a {
+#about section .profile ul li p, a {
   float: left;
   font-size: 0.8125rem;
   line-height: 2.5rem;
@@ -246,30 +243,26 @@ iframe {
   font-size: 1.125rem;
   margin: 0 0 0.625rem 0.3125rem;
 }
-#about section .education nav {
+#about section .education ul {
   width: 100%;
   height: 2.5rem;
 }
-#about section .education nav ul {
-  width: 100%;
-  height: 100%;
-}
-#about section .education nav ul li {
+#about section .education ul li {
   width: 100%;
   height: 100%;
   list-style: none;
 }
-#about section .education nav ul li img {
+#about section .education ul li img {
   float: left;
   width: 2.1875rem;
   height: 2.1875rem;
   margin: 0.15625rem 0.625rem 0.15625rem 0.3125rem;
 }
-#about section .education nav ul li h3 {
+#about section .education ul li h3 {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-#about section .education nav ul li p {
+#about section .education ul li p {
   font-size: 0.8125rem;
   line-height: 1.25rem;
 }
@@ -278,12 +271,12 @@ iframe {
 #project section ul {
   width: 100%;
   height: 100%;
-  padding: 0.625rem 0;
 }
 #project section ul li {
   float: left;
   width: 6rem;
-  height: 5.25rem;
+  height: 5.5625rem;
+  padding: 0.625rem;
   list-style: none;
 }
 #project section ul li a {
@@ -298,12 +291,73 @@ iframe {
   float: left;
   width: 3rem;
   height: 3rem;
-  margin: 0 1.5rem;
+  margin: 0 0.875rem;
 }
 #project section ul li a p {
   float: left;
   width: 100%;
-  height: 2.25rem;
-  line-height: 2.25rem;
+  height: 1.3125rem;
+  line-height: 1.3125rem;
+  text-align: center;
+}
+
+/* activity */
+#activity section ul {
+  width: 100%;
+  height: 100%;
+}
+#activity section ul li {
+  float: left;
+  width: 6rem;
+  height: 5.5625rem;
+  padding: 0.625rem;
+  list-style: none;
+}
+#activity section ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+#activity section ul li a img {
+  float: left;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.875rem;
+}
+#activity section ul li a p {
+  float: left;
+  width: 100%;
+  height: 1.3125rem;
+  line-height: 1.3125rem;
+  text-align: center;
+}
+
+/* certificate */
+#certificate section ul {
+  width: 100%;
+  height: 100%;
+}
+#certificate section ul li {
+  float: left;
+  width: 7.5rem;
+  height: 7.375rem;
+  padding: 0.625rem;
+  list-style: none;
+}
+#certificate section ul li img {
+  float: left;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin: 0.625rem 1.5625rem;
+}
+#certificate section ul li p {
+  float: left;
+  width: 100%;
+  height: 1.5625rem;
+  line-height: 1.5625rem;
+  font-size: 0.8125rem;
   text-align: center;
 }
