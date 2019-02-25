@@ -128,7 +128,7 @@ iframe {
   opacity: 1;
 }
 .mac-popup header div.folder-name {
-  width: 5rem;
+  width: 7rem;
   height: 1.75rem;
   margin: 0 auto;
   padding: 0.375rem 0;
@@ -142,7 +142,6 @@ iframe {
 .mac-popup header div.folder-name p {
   float: left;
   font-size: 0.75rem;
-  margin: 0.0625rem 0 0 0;
 }
 .mac-popup > nav {
   float: left;
@@ -234,6 +233,10 @@ iframe {
   font-size: 0.8125rem;
   line-height: 2.5rem;
 }
+#about section .profile ul li a {
+  color: #000;
+  text-decoration: none;
+}
 #about section .education {
   width: 100%;
   height: 6.25rem;
@@ -259,7 +262,7 @@ iframe {
   margin: 0.15625rem 0.625rem 0.15625rem 0.3125rem;
 }
 #about section .education ul li h3 {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   line-height: 1.25rem;
 }
 #about section .education ul li p {
@@ -267,19 +270,19 @@ iframe {
   line-height: 1.25rem;
 }
 
-/* project */
-#project section ul {
+/* folderList */
+.folderList {
   width: 100%;
   height: 100%;
 }
-#project section ul li {
+.folderList li {
   float: left;
   width: 6rem;
   height: 5.5625rem;
   padding: 0.625rem;
   list-style: none;
 }
-#project section ul li a {
+.folderList li a {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -287,13 +290,13 @@ iframe {
   font-size: 0.875rem;
   text-decoration: none;
 }
-#project section ul li a img {
+.folderList li a img {
   float: left;
   width: 3rem;
   height: 3rem;
   margin: 0 0.875rem;
 }
-#project section ul li a p {
+.folderList li a p {
   float: left;
   width: 100%;
   height: 1.3125rem;
@@ -301,63 +304,97 @@ iframe {
   text-align: center;
 }
 
-/* activity */
-#activity section ul {
+/* fileList */
+.fileList {
   width: 100%;
   height: 100%;
 }
-#activity section ul li {
-  float: left;
-  width: 6rem;
-  height: 5.5625rem;
-  padding: 0.625rem;
-  list-style: none;
-}
-#activity section ul li a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  color: #000;
-  font-size: 0.875rem;
-  text-decoration: none;
-}
-#activity section ul li a img {
-  float: left;
-  width: 3rem;
-  height: 3rem;
-  margin: 0 0.875rem;
-}
-#activity section ul li a p {
-  float: left;
-  width: 100%;
-  height: 1.3125rem;
-  line-height: 1.3125rem;
-  text-align: center;
-}
-
-/* certificate */
-#certificate section ul {
-  width: 100%;
-  height: 100%;
-}
-#certificate section ul li {
+.fileList li {
   float: left;
   width: 7.5rem;
   height: 7.375rem;
   padding: 0.625rem;
   list-style: none;
 }
-#certificate section ul li img {
+.fileList li a {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  text-decoration: none;
+}
+.fileList li img {
   float: left;
   width: 3.125rem;
   height: 3.125rem;
   margin: 0.625rem 1.5625rem;
 }
-#certificate section ul li p {
+.fileList li p {
   float: left;
   width: 100%;
   height: 1.5625rem;
   line-height: 1.5625rem;
   font-size: 0.8125rem;
   text-align: center;
+}
+
+/* project-infomation */
+.project-infomation {
+  width: 100%;
+  height: 200px;
+  padding: 0.9375rem;
+}
+.project-infomation h2 {
+  font-size: 1.125rem;
+  margin: 0 0 0.625rem 0.3125rem;
+}
+.project-infomation h2 span {
+  font-size: 0.875rem;
+}
+/* .project-infomation .infomation-img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 1.25rem 0.9375rem 1.25rem 0;
+  overflow: hidden;
+  border-radius: 0.3125rem;
+}
+.project-infomation .infomation-img img {
+  width: 100%;
+  height: 100%;
+} */
+.project-infomation p {
+  width: 100%;
+  height: 100px;
+  font-size: 0.84375rem;
+  line-height: 1.25rem;
+}
+.project-infomation ul {
+  float: left;
+  width: 20.625rem;
+  height: 2.5rem;
+}
+.project-infomation ul li {
+  width: 100%;
+  height: 1.25rem;
+  list-style: none;
+}
+.project-infomation ul li img {
+  float: left;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0.0625rem 0.3125rem 0.0625rem 0;
+}
+.project-infomation ul li a {
+  color: #0066ff;
+  font-size: 0.78125rem;
+  line-height: 1.25rem;
+}
+.project-screenshot {
+  width: 100%;
+  height: 9.75rem;
+  padding: 0 0.9375rem 0.9375rem 0.9375rem;
+}
+.project-screenshot h2 {
+  font-size: 1.125rem;
+  margin: 0 0 0.625rem 0.3125rem;
 }
