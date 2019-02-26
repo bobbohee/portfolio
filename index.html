@@ -109,8 +109,10 @@
             if (insideFolder) {
               for (let j = 0; j < insideFolder.length; j++) {
                 insideFolder[j].addEventListener('click', function (event) {
+                  let prev = iframe.getAttribute('src');;
+                  
                   event.preventDefault();
-
+                  
                   iframe.setAttribute('src', './' + this.dataset.iframe + '.html');
                 }, false);
               }
