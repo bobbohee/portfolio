@@ -43,7 +43,7 @@
         <p>design</p>
       </div>
       <div class="prev-btn">
-        <div>
+        <div id="prev">
           <span>&lt;</span>
         </div>
         <div>
@@ -146,7 +146,8 @@
       let folder = document.getElementsByClassName('folder');
       let folderName = document.getElementsByClassName('folder-name')[0].children[1];
       let closed = document.getElementById('closed');
-
+      let prev = document.getElementById('prev');
+    
       for (let i = 0; i < folder.length; i++) {
         folder[i].addEventListener('click', event => {
           event.preventDefault();
@@ -162,11 +163,19 @@
             if (insideFolder) {
               for (let j = 0; j < insideFolder.length; j++) {
                 insideFolder[j].addEventListener('click', event => {
-                  let prev = iframe.getAttribute('src');;
-                  
+                  let insideFolderName = insideFolder[j].dataset.iframe.split('/');
+                  let prevSrc = iframe.getAttribute('src');
+
                   event.preventDefault();
-                  
+          
+                  folderName.innerText = insideFolderName[insideFolderName.length - 1]; 
                   iframe.setAttribute('src', './' + insideFolder[j].dataset.iframe + '.html');
+
+                  if (prevSrc) {
+                    prev.addEventListener('click', event => {
+                      iframe.setAttribute('src', prevSrc);      
+                    }); // prev 'click'
+                  } // if (prev)
                 }, false); // insideFolder 'click'
               } // for (insideFolder.length)
             } // if (insideFolder)
