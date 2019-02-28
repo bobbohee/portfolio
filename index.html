@@ -25,7 +25,64 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <iframe src="" id="iframe" frameborder="0"></iframe>
+  <div id="mac-popup">
+    <header>
+      <div class="mac-btn">
+        <div id="closed">
+          <span>×</span>
+        </div>
+        <div>
+          <span>-</span>
+        </div>
+        <div>
+          <span>＋</span>
+        </div>
+      </div>
+      <div class="folder-name">
+        <img src="../img/menu-icon/folder.png" alt="folder">
+        <p>design</p>
+      </div>
+      <div class="prev-btn">
+        <div>
+          <span>&lt;</span>
+        </div>
+        <div>
+          <span>&gt;</span>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="" class="folder" data-iframe="about">
+            <img src="../img/menu-icon/folder.png" alt="folder">
+            <p>about</p>
+          </a>
+        </li>
+        <li>
+          <a href="" class="folder" data-iframe="project">
+            <img src="../img/menu-icon/folder.png" alt="folder">
+            <p>project</p>
+          </a>
+        </li>
+        <li>
+          <a href="" class="folder" data-iframe="activity">
+            <img src="../img/menu-icon/folder.png" alt="folder">
+            <p>activity</p>
+          </a>
+        </li>
+        <li>
+          <a href="" class="folder" data-iframe="certificate">
+            <img src="../img/menu-icon/folder.png" alt="folder">
+            <p>certificate</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <iframe src="" id="iframe" frameborder="0"></iframe>
+    </section>
+  </div>
   <div id="wrap">
     <div class="background">
       <nav>
@@ -83,44 +140,45 @@
     </div>
   </div>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let folder = document.getElementsByClassName('folder');
+    document.addEventListener("DOMContentLoaded", () => {
       let iframe = document.getElementById('iframe');
+      let macPopup = document.getElementById('mac-popup');
+      let folder = document.getElementsByClassName('folder');
+      let folderName = document.getElementsByClassName('folder-name')[0].children[1];
+      let closed = document.getElementById('closed');
 
       for (let i = 0; i < folder.length; i++) {
-        folder[i].addEventListener('click', function (event) {
+        folder[i].addEventListener('click', event => {
           event.preventDefault();
 
-          iframe.setAttribute('src', './' + this.dataset.iframe + '.html');
-          iframe.style.display = 'block';
+          folderName.innerText = folder[i].dataset.iframe;
+          iframe.setAttribute('src', './' + folder[i].dataset.iframe + '.html');
+          macPopup.style.display = 'block';
 
-          iframe.addEventListener('load', function () {
+          iframe.addEventListener('load', () => {
             let iframeDocument = iframe.contentWindow.document;
-            let closed = iframeDocument.getElementById('closed');
             let insideFolder = iframeDocument.getElementsByClassName('insideFolder');
-
-            if (closed) {
-              closed.addEventListener('click', function () {
-                iframe.setAttribute('src', '');
-                iframe.style.display = 'none';
-              });
-            }
-
+            
             if (insideFolder) {
               for (let j = 0; j < insideFolder.length; j++) {
-                insideFolder[j].addEventListener('click', function (event) {
+                insideFolder[j].addEventListener('click', event => {
                   let prev = iframe.getAttribute('src');;
                   
                   event.preventDefault();
                   
-                  iframe.setAttribute('src', './' + this.dataset.iframe + '.html');
-                }, false);
-              }
-            }
-          });
-        }, false);
-      }
-    });
+                  iframe.setAttribute('src', './' + insideFolder[j].dataset.iframe + '.html');
+                }, false); // insideFolder 'click'
+              } // for (insideFolder.length)
+            } // if (insideFolder)
+          }); // iframe 'load'
+        }, false); // folder 'click'
+      } // for (folder.length)
+
+      closed.addEventListener('click', () => {
+        iframe.setAttribute('src', '');
+        macPopup.style.display = 'none';
+      }); // closed 'click'
+    }); // document 'DOMContentLoaded'
   </script>
 </body>
 </html>
