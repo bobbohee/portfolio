@@ -42,14 +42,6 @@
         <img src="../img/menu-icon/folder.png" alt="folder">
         <p>design</p>
       </div>
-      <div class="prev-btn">
-        <div id="prev">
-          <span>&lt;</span>
-        </div>
-        <div>
-          <span>&gt;</span>
-        </div>
-      </div>
     </header>
     <nav>
       <ul>
@@ -146,42 +138,34 @@
       let folder = document.getElementsByClassName('folder');
       let folderName = document.getElementsByClassName('folder-name')[0].children[1];
       let closed = document.getElementById('closed');
-      let prev = document.getElementById('prev');
-    
+
       for (let i = 0; i < folder.length; i++) {
         folder[i].addEventListener('click', event => {
           event.preventDefault();
-
+        
           folderName.innerText = folder[i].dataset.iframe;
           iframe.setAttribute('src', './' + folder[i].dataset.iframe + '.html');
           macPopup.style.display = 'block';
-
-          iframe.addEventListener('load', () => {
-            let iframeDocument = iframe.contentWindow.document;
-            let insideFolder = iframeDocument.getElementsByClassName('insideFolder');
-            
-            if (insideFolder) {
-              for (let j = 0; j < insideFolder.length; j++) {
-                insideFolder[j].addEventListener('click', event => {
-                  let insideFolderName = insideFolder[j].dataset.iframe.split('/');
-                  let prevSrc = iframe.getAttribute('src');
-
-                  event.preventDefault();
-          
-                  folderName.innerText = insideFolderName[insideFolderName.length - 1]; 
-                  iframe.setAttribute('src', './' + insideFolder[j].dataset.iframe + '.html');
-
-                  if (prevSrc) {
-                    prev.addEventListener('click', event => {
-                      iframe.setAttribute('src', prevSrc);      
-                    }); // prev 'click'
-                  } // if (prev)
-                }, false); // insideFolder 'click'
-              } // for (insideFolder.length)
-            } // if (insideFolder)
-          }); // iframe 'load'
         }, false); // folder 'click'
       } // for (folder.length)
+
+      iframe.addEventListener('load', () => {
+        let iframeDocument = iframe.contentWindow.document;
+        let insideFolder = iframeDocument.getElementsByClassName('insideFolder');
+        
+        if (insideFolder) {
+          for (let j = 0; j < insideFolder.length; j++) {
+            insideFolder[j].addEventListener('click', event => {
+              let insideFolderName = insideFolder[j].dataset.iframe.split('/');
+
+              event.preventDefault();
+
+              folderName.innerText = insideFolderName[insideFolderName.length - 1].replace('-', ' '); 
+              iframe.setAttribute('src', './' + insideFolder[j].dataset.iframe + '.html');
+            }, false); // insideFolder 'click'
+          } // for (insideFolder.length)
+        } // if (insideFolder)
+      }); // iframe 'load'
 
       closed.addEventListener('click', () => {
         iframe.setAttribute('src', '');
