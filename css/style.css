@@ -300,6 +300,9 @@
 #activity ul li:last-child {
   margin: 0;
 }
+#activity ul li.not-img {
+  height: 3.125rem;
+}
 #activity ul li h3 {
   font-size: 1.0625rem;
   line-height: 1.5625rem;
