@@ -144,6 +144,32 @@
   float: left;
   font-size: 0.75rem;
 }
+#mac-popup header div.arrow-btn {
+  position: absolute;
+  top: 0; right: 0;
+  width: 4.05rem;
+  height: 1.75rem;
+  padding: 0.225rem 0.425rem;
+}
+#mac-popup header div.arrow-btn div {
+  float: left;
+  width: 1.55rem;
+  height: 1.3rem;
+  line-height: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  cursor: pointer;
+}
+#mac-popup header div.arrow-btn div:first-child {
+  margin: 0 0.1rem 0 0;
+}
+#mac-popup header div.arrow-btn div span {
+  color: #808080;
+  font-size: 12px;
+  font-weight: bold;
+}
 #mac-popup > nav {
   float: left;
   width: 10rem;
