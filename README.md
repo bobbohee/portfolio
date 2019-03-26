@@ -7,15 +7,17 @@ mac 환경과 비슷한 느낌으로 제작하였습니다.
 
 ## SKILL
 
-1. iframe
+* :electric_plug: iframe
 
-2. vanillajs
+* :icecream: vanillajs
 
 ## LIBRARY
 
 ## VERSION
 
 * v1.0 - 2019.02.15 ~ 2019.03.05
+
+<img src="https://github.com/park-bohee/portfolio/blob/master/screenshot/javascript/portfolio.png" width="100%" alt="v1-main-img"/>
 
 ## DEVELOPER
 
