@@ -143,35 +143,35 @@
     document.addEventListener("DOMContentLoaded", () => {
       let iframe = document.getElementById('iframe');
       let macPopup = document.getElementById('mac-popup');
-      let folder = document.getElementsByClassName('folder');
+      let folders = document.getElementsByClassName('folder');
       let folderName = document.getElementsByClassName('folder-name')[0].children[1];
       let closed = document.getElementById('closed');
       let back = document.getElementById('back');
       let forward = document.getElementById('forward');
 
-      for (let i = 0; i < folder.length; i++) {
-        folder[i].addEventListener('click', event => {
+      for (let folder of folders) {
+        folder.addEventListener('click', event => {
           event.preventDefault();
 
-          folderName.innerText = folder[i].dataset.iframe;
-          iframe.setAttribute('src', './' + folder[i].dataset.iframe + '.html');
+          folderName.innerText = folder.dataset.iframe;
+          iframe.setAttribute('src', './' + folder.dataset.iframe + '.html');
           macPopup.style.display = 'block';
         }, false); // folder 'click'
       } // for (folder.length)
 
       iframe.addEventListener('load', () => {
         let iframeDocument = iframe.contentWindow.document;
-        let insideFolder = iframeDocument.getElementsByClassName('insideFolder');
+        let insideFolders = iframeDocument.getElementsByClassName('insideFolder');
 
-        if (insideFolder) {
-          for (let j = 0; j < insideFolder.length; j++) {
-            insideFolder[j].addEventListener('click', event => {
-              let insideFolderName = insideFolder[j].dataset.iframe.split('/');
+        if (insideFolders) {
+          for (let insideFolder of insideFolders) {
+            insideFolder.addEventListener('click', event => {
+              let insideFolderName = insideFolder.dataset.iframe.split('/');
 
               event.preventDefault();
 
               folderName.innerText = insideFolderName[insideFolderName.length - 1].replace('-', ' ');
-              iframe.setAttribute('src', './' + insideFolder[j].dataset.iframe + '.html');
+              iframe.setAttribute('src', './' + insideFolder.dataset.iframe + '.html');
             }, false); // insideFolder 'click'
           } // for (insideFolder.length)
         } // if (insideFolder)
@@ -192,5 +192,4 @@
     }); // document 'DOMContentLoaded'
   </script>
 </body>
-
 </html>
